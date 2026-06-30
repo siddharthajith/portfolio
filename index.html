@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Siddharth Ajith — Photography, media, and film. Capturing stories through visuals, motion, and design.">
+  <title>Siddharth Ajith — Photography &amp; Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --charcoal: #1c1a18;
+      --charcoal-deep: #141210;
+      --charcoal-raised: #24211e;
+      --cream: #f3ede3;
+      --cream-muted: rgba(243, 237, 227, 0.62);
+      --cream-dim: rgba(243, 237, 227, 0.36);
+      --clay: #c07858;
+      --clay-soft: rgba(192, 120, 88, 0.14);
+      --clay-border: rgba(192, 120, 88, 0.32);
+      --sage: #8a9b8c;
+      --sage-soft: rgba(138, 155, 140, 0.1);
+      --sage-border: rgba(138, 155, 140, 0.18);
+      --bronze: #a68b62;
+      --bronze-soft: rgba(166, 139, 98, 0.12);
+      --border: rgba(243, 237, 227, 0.07);
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+      --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+      --nav-h: 76px;
+      --max: 1180px;
+      --section-pad: clamp(5rem, 10vw, 8rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--cream);
+      background: var(--charcoal);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    img, video { display: block; max-width: 100%; }
+    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+
+    :focus-visible {
+      outline: 1px solid var(--bronze);
+      outline-offset: 3px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+    }
+
+    .wrap {
+      width: min(var(--max), 90vw);
+      margin: 0 auto;
+    }
+
+    /* ─── Navigation ─────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      background: rgba(28, 26, 24, 0.72);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      transition: border-color 0.4s var(--ease), background 0.4s;
+    }
+
+    .nav.is-scrolled {
+      border-bottom-color: var(--border);
+      background: rgba(20, 18, 16, 0.92);
+    }
+
+    .nav__inner {
+      width: min(var(--max), 90vw);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 2.25rem;
+    }
+
+    .nav__links a {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav__links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 1px;
+      background: var(--clay);
+      transition: width 0.35s var(--ease);
+    }
+
+    .nav__links a:hover,
+    .nav__links a.is-active { color: var(--cream); }
+
+    .nav__links a.is-active::after,
+    .nav__links a:hover::after { width: 100%; }
+
+    .nav__toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .nav__toggle span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--cream);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav__toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
+    .nav__toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav__mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: rgba(20, 18, 16, 0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.25rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s, visibility 0.4s;
+    }
+
+    .nav__mobile.is-open { opacity: 1; visibility: visible; }
+
+    .nav__mobile a {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      color: var(--cream-muted);
+      transition: color 0.3s;
+    }
+
+    .nav__mobile a.is-active,
+    .nav__mobile a:hover { color: var(--cream); }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__toggle { display: flex; }
+      .nav__mobile { display: flex; }
+    }
+
+    /* ─── Sections ───────────────────────────────────────────── */
+    section {
+      padding: var(--section-pad) 0;
+      scroll-margin-top: var(--nav-h);
+    }
+
+    section[id] { border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      max-width: 520px;
+      color: var(--cream-muted);
+      font-size: 0.98rem;
+      margin-bottom: 3rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────────── */
+    #home {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-h);
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+      transition: transform 8s var(--ease);
+    }
+
+    #home:hover .hero__bg { transform: scale(1.08); }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(20, 18, 16, 0.55) 0%, rgba(20, 18, 16, 0.72) 45%, rgba(20, 18, 16, 0.88) 100%),
+        linear-gradient(to right, rgba(20, 18, 16, 0.5) 0%, transparent 55%);
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 0 4rem;
+      width: 100%;
+    }
+
+    .hero__name {
+      font-size: clamp(3.2rem, 10vw, 6.2rem);
+      font-weight: 300;
+      margin-bottom: 1rem;
+      line-height: 1.05;
+      text-shadow: 0 2px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero__subtitle {
+      font-size: clamp(0.82rem, 2vw, 0.95rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero__intro {
+      max-width: 460px;
+      font-size: 1.1rem;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 2.1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--clay-border);
+      background: var(--clay-soft);
+      color: var(--cream);
+      transition: background 0.35s, border-color 0.35s;
+    }
+
+    .btn:hover {
+      background: rgba(192, 120, 88, 0.24);
+      border-color: var(--clay);
+    }
+
+    .btn--ghost {
+      background: rgba(20, 18, 16, 0.35);
+      border-color: rgba(243, 237, 227, 0.2);
+      color: var(--cream-muted);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn--ghost:hover {
+      border-color: var(--sage);
+      color: var(--cream);
+      background: rgba(20, 18, 16, 0.5);
+    }
+
+    /* ─── Filters ──────────────────────────────────────────────── */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter {
+      padding: 0.55rem 1.15rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      border: 1px solid var(--border);
+      transition: color 0.3s, border-color 0.3s, background 0.3s;
+    }
+
+    .filter:hover {
+      color: var(--cream-muted);
+      border-color: var(--sage-border);
+    }
+
+    .filter.is-active {
+      color: var(--cream);
+      border-color: var(--clay-border);
+      background: var(--clay-soft);
+    }
+
+    /* ─── Album folders ────────────────────────────────────────── */
+    .albums-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      align-items: stretch;
+      animation: galleryIn 0.6s var(--ease);
+    }
+
+    .album-card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      background: var(--charcoal-raised);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.4s, transform 0.45s var(--ease);
+    }
+
+    .album-card:hover {
+      border-color: var(--clay-border);
+      transform: translateY(-3px);
+    }
+
+    .album-card__cover {
+      position: relative;
+      flex-shrink: 0;
+      aspect-ratio: 16 / 10;
+      background: var(--charcoal-deep);
+      overflow: hidden;
+    }
+
+    .album-card__cover img,
+    .album-card__cover video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s var(--ease);
+    }
+
+    .album-card:hover .album-card__cover img { transform: scale(1.04); }
+
+    .album-card__body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 1.35rem 1.4rem 1.5rem;
+    }
+
+    .album-card__title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      line-height: 1.25;
+      min-height: calc(1.4rem * 1.25 * 2);
+      margin-bottom: 0.35rem;
+    }
+
+    .album-card__meta {
+      margin-top: auto;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+
+    .album-view { display: none; }
+    .album-view.is-active { display: block; }
+
+    .back-btn {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+
+    .back-btn:hover { color: var(--clay); }
+
+    .album-layout {
+      display: grid;
+      grid-template-columns: minmax(240px, 280px) 1fr;
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .album-layout { grid-template-columns: 1fr; }
+    }
+
+    .album-panel {
+      padding: 1.5rem;
+      background: var(--charcoal-raised);
+      border: 1px solid var(--sage-border);
+    }
+
+    .album-panel__label {
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+
+    .album-panel__title {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .album-panel__text {
+      color: var(--cream-muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .album-panel__count {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+
+    /* ─── Gallery grid ─────────────────────────────────────────── */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      animation: galleryIn 0.6s var(--ease);
+    }
+
+    @keyframes galleryIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      .gallery { grid-template-columns: 1fr; }
+    }
+
+    .gallery__item {
+      aspect-ratio: 4 / 3;
+      background: var(--charcoal-raised);
+      border: 1px solid transparent;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.35s, transform 0.4s var(--ease);
+    }
+
+    .gallery__item:hover {
+      border-color: rgba(166, 139, 98, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .gallery__item img,
+    .gallery__item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .gallery__item--video::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 18, 16, 0.2);
+      transition: background 0.3s;
+    }
+
+    .gallery__item--video::before {
+      content: "▶";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--cream);
+      border: 1px solid rgba(243, 237, 227, 0.35);
+      border-radius: 50%;
+      background: rgba(28, 26, 24, 0.55);
+      backdrop-filter: blur(4px);
+    }
+
+    .empty-state {
+      padding: 5rem 2rem;
+      text-align: center;
+      border: 1px solid var(--sage-border);
+      background: linear-gradient(160deg, var(--sage-soft) 0%, transparent 55%);
+    }
+
+    .empty-state p {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--cream-muted);
+    }
+
+    /* ─── About ────────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 320px) 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    .about-photo {
+      margin: 0;
+    }
+
+    .about-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid var(--border);
+      background: var(--charcoal-deep);
+    }
+
+    .about-photo figcaption {
+      margin-top: 1.25rem;
+    }
+
+    .about-meta__label {
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.4rem;
+    }
+
+    .about-meta__value {
+      font-size: 0.95rem;
+      color: var(--cream-muted);
+    }
+
+    .about-lead {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+      line-height: 1.48;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-body {
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 2.75rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .skill {
+      padding: 0.55rem 1.1rem;
+      font-size: 0.76rem;
+      color: var(--cream-muted);
+      border: 1px solid var(--sage-border);
+      background: var(--sage-soft);
+    }
+
+    /* ─── Footer / Contact ─────────────────────────────────────── */
+    #contact.footer-end {
+      min-height: 82vh;
+      padding: clamp(4rem, 9vh, 6.5rem) 0 clamp(3rem, 7vh, 5rem);
+      background: var(--charcoal-deep);
+      position: relative;
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 1.15s var(--ease), transform 1.15s var(--ease);
+    }
+
+    #contact.footer-end.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #contact.footer-end::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: clamp(1.25rem, 4vw, 2rem);
+      right: clamp(1.25rem, 4vw, 2rem);
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(166, 139, 98, 0.22) 20%,
+        rgba(243, 237, 227, 0.08) 50%,
+        rgba(166, 139, 98, 0.22) 80%,
+        transparent 100%
+      );
+    }
+
+    .footer-end__wrap {
+      height: 100%;
+    }
+
+    .footer-end__grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 1.15fr) 1fr minmax(220px, 0.85fr);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: stretch;
+      min-height: calc(82vh - clamp(7rem, 14vh, 11rem));
+    }
+
+    .footer-end__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1rem, 3vh, 2rem) 0;
+    }
+
+    .footer-end__label {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: clamp(1.75rem, 4vh, 2.5rem);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.9s var(--ease) 0.1s, transform 0.9s var(--ease) 0.1s;
+    }
+
+    .footer-end.is-visible .footer-end__label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .footer-end__heading {
+      font-family: var(--serif);
+      font-size: clamp(2.75rem, 6.5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      color: var(--cream);
+      margin-bottom: clamp(2rem, 4vh, 3rem);
+    }
+
+    .footer-end__line {
+      display: block;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.95s var(--ease), transform 0.95s var(--ease);
+    }
+
+    .footer-end.is-visible .footer-end__line:nth-child(1) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.28s;
+    }
+
+    .footer-end.is-visible .footer-end__line:nth-child(2) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.44s;
+    }
+
+    .footer-end.is-visible .footer-end__line:nth-child(3) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.6s;
+    }
+
+    .footer-end__email {
+      display: inline-block;
+      width: fit-content;
+      font-size: clamp(0.92rem, 1.4vw, 1.02rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      margin-bottom: clamp(2rem, 4vh, 2.75rem);
+      opacity: 0;
+      transform: translateY(14px);
+      transition:
+        opacity 0.85s var(--ease) 0.78s,
+        transform 0.85s var(--ease) 0.78s,
+        color 0.35s;
+      position: relative;
+    }
+
+    .footer-end.is-visible .footer-end__email {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .footer-end__email::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 1px;
+      background: var(--bronze);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.55s var(--ease);
+    }
+
+    .footer-end__email:hover {
+      color: var(--cream);
+    }
+
+    .footer-end__email:hover::after {
+      transform: scaleX(1);
+    }
+
+    .footer-end__socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .footer-end__socials a {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.8s var(--ease),
+        transform 0.8s var(--ease),
+        color 0.35s;
+    }
+
+    .footer-end.is-visible .footer-end__socials a:nth-child(1) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.98s;
+    }
+
+    .footer-end.is-visible .footer-end__socials a:nth-child(2) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 1.14s;
+    }
+
+    .footer-end__socials a:hover {
+      color: var(--bronze);
+    }
+
+    .footer-end__center {
+      /* intentional negative space */
+    }
+
+    .footer-end__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      align-self: end;
+      text-align: right;
+      padding-bottom: 0.25rem;
+    }
+
+    .footer-end__meta {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.85s var(--ease) 1.32s, transform 0.85s var(--ease) 1.32s;
+    }
+
+    .footer-end.is-visible .footer-end__meta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .footer-end__meta-line {
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: rgba(243, 237, 227, 0.24);
+      line-height: 1.95;
+    }
+
+    .footer-end__legal {
+      margin-top: 1.5rem;
+      max-width: 18rem;
+      font-size: 0.6rem;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      color: rgba(243, 237, 227, 0.14);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.85s var(--ease) 1.55s, transform 0.85s var(--ease) 1.55s;
+    }
+
+    .footer-end.is-visible .footer-end__legal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 960px) {
+      #contact.footer-end {
+        min-height: auto;
+      }
+
+      .footer-end__grid {
+        grid-template-columns: 1fr 1fr;
+        min-height: auto;
+      }
+
+      .footer-end__center {
+        display: none;
+      }
+
+      .footer-end__right {
+        grid-column: 1 / -1;
+        align-items: flex-start;
+        text-align: left;
+        margin-top: clamp(2.5rem, 6vh, 4rem);
+        padding-top: clamp(2rem, 4vh, 3rem);
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-end__legal {
+        max-width: 28rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .footer-end__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-end__left {
+        padding-bottom: 0;
+      }
+
+      .footer-end__socials {
+        gap: 1.75rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #contact.footer-end,
+      #contact.footer-end.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .footer-end__label,
+      .footer-end__line,
+      .footer-end__email,
+      .footer-end__socials a,
+      .footer-end__meta,
+      .footer-end__legal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ─── Fullscreen viewer ────────────────────────────────────── */
+    .viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      background: rgba(10, 9, 8, 0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.45s var(--ease), visibility 0.45s;
+    }
+
+    .viewer.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .viewer__stage {
+      width: min(1200px, 96vw);
+      transform: scale(0.94);
+      opacity: 0;
+      transition: transform 0.55s var(--ease), opacity 0.45s;
+    }
+
+    .viewer.is-open .viewer__stage {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .viewer__media-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 0;
+    }
+
+    .viewer__media {
+      display: block;
+      max-width: 100%;
+      max-height: 78vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .viewer__media--video {
+      max-width: 100%;
+      max-height: 78vh;
+      width: auto;
+      height: auto;
+      background: transparent;
+    }
+
+    .viewer__footer {
+      padding: 1.1rem 0.25rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .viewer__caption {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+    }
+
+    .viewer__meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--cream-dim);
+      flex-shrink: 0;
+    }
+
+    .viewer__warning {
+      padding: 0.75rem 0;
+      font-size: 0.85rem;
+      color: var(--cream-muted);
+      font-style: italic;
+    }
+
+    .viewer__close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(243, 237, 227, 0.15);
+      border-radius: 50%;
+      color: var(--cream-muted);
+      font-size: 1.4rem;
+      z-index: 301;
+      background: rgba(20, 18, 16, 0.5);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .viewer__close:hover {
+      border-color: var(--clay);
+      color: var(--cream);
+    }
+
+    .viewer__nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(243, 237, 227, 0.15);
+      border-radius: 50%;
+      color: var(--cream-muted);
+      font-size: 1rem;
+      z-index: 301;
+      background: rgba(20, 18, 16, 0.5);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.3s, background 0.3s, color 0.3s;
+    }
+
+    .viewer__nav:hover:not(:disabled) {
+      border-color: var(--bronze);
+      background: var(--bronze-soft);
+      color: var(--cream);
+    }
+
+    .viewer__nav:disabled {
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .viewer__nav--prev { left: 1.25rem; }
+    .viewer__nav--next { right: 1.25rem; }
+
+    body.viewer-open { overflow: hidden; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+      #home:hover .hero__bg { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">Siddharth Ajith</a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#photography">Photography</a>
+        <a href="#media">Media</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav__mobile" id="navMobile" aria-label="Mobile">
+    <a href="#home">Home</a>
+    <a href="#photography">Photography</a>
+    <a href="#media">Media</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section id="home">
+      <div class="hero__bg" id="heroBg"></div>
+      <div class="hero__overlay"></div>
+      <div class="wrap">
+        <div class="hero reveal">
+          <h1 class="hero__name">Siddharth Ajith</h1>
+          <p class="hero__subtitle">Photography &bull; Media &bull; Film</p>
+          <p class="hero__intro">A student creating content </p>
+          <div class="hero__actions">
+            <a href="#photography" class="btn">View Photography</a>
+            <a href="#media" class="btn btn--ghost">View Media</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photography">
+      <div class="wrap">
+        <header class="reveal">
+          <p class="section-label">Gallery</p>
+          <h2 class="section-title">Photography</h2>
+          <p class="section-desc">Work organised by folder. Open a folder to browse photos.</p>
+        </header>
+        <div id="photoAlbumList">
+          <div class="albums-grid" id="photoAlbumsGrid"></div>
+          <div class="empty-state reveal" id="photoEmpty">
+            <p>Photos will appear here.</p>
+          </div>
+        </div>
+        <div class="album-view" id="photoAlbumView" hidden>
+          <button type="button" class="back-btn" id="photoBack">&larr; All folders</button>
+          <div class="album-layout">
+            <aside class="album-panel" id="photoPanel"></aside>
+            <div class="gallery" id="photoAlbumGallery"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media">
+      <div class="wrap">
+        <header class="reveal">
+          <p class="section-label">Motion</p>
+          <h2 class="section-title">Media &amp; Videos</h2>
+          <p class="section-desc">Video projects organised by folder. Add videos to a project folder and they appear here automatically.</p>
+        </header>
+        <div id="videoAlbumList">
+          <div class="albums-grid" id="videoAlbumsGrid"></div>
+          <div class="empty-state reveal" id="videoEmpty">
+            <p>Videos will appear here.</p>
+          </div>
+        </div>
+        <div class="album-view" id="videoAlbumView" hidden>
+          <button type="button" class="back-btn" id="videoBack">&larr; All folders</button>
+          <div class="album-layout">
+            <aside class="album-panel" id="videoPanel"></aside>
+            <div class="gallery" id="videoAlbumGallery"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <header class="reveal">
+          <p class="section-label">Profile</p>
+          <h2 class="section-title">About</h2>
+        </header>
+        <div class="about-grid reveal">
+          <figure class="about-photo">
+            <img id="aboutPhoto" src="" alt="Siddharth Ajith" width="320" height="427" loading="lazy">
+            <figcaption>
+              <p class="about-meta__label">Based in</p>
+              <p class="about-meta__value">Dubai, UAE</p>
+            </figcaption>
+          </figure>
+          <div class="about-content">
+            <p class="about-lead" id="aboutLead"></p>
+            <p class="about-body" id="aboutBody"></p>
+            <div class="skills" id="aboutSkills"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="footer-end" aria-label="Contact">
+      <div class="wrap footer-end__wrap">
+        <div class="footer-end__grid">
+          <div class="footer-end__left">
+            <p class="footer-end__label">Get in touch</p>
+            <h2 class="footer-end__heading">
+              <span class="footer-end__line">Let's create</span>
+              <span class="footer-end__line">something</span>
+              <span class="footer-end__line">meaningful.</span>
+            </h2>
+            <a class="footer-end__email" id="contactEmail" href="mailto:siddharthajith.photography@gmail.com">siddharthajith.photography@gmail.com</a>
+            <nav class="footer-end__socials" id="contactSocials" aria-label="Social links"></nav>
+          </div>
+          <div class="footer-end__center" aria-hidden="true"></div>
+          <div class="footer-end__right">
+            <div class="footer-end__meta">
+              <p class="footer-end__meta-line">&copy; <span id="footerYear"></span> Siddharth Ajith</p>
+              <p class="footer-end__meta-line">Dubai, UAE</p>
+              <p class="footer-end__meta-line">Photographer &middot; Filmmaker &middot; Creative Developer</p>
+            </div>
+            <p class="footer-end__legal">None of the information on this page can be used for training AI, or used for any commercial purposes without consent from the creator directly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Unified fullscreen viewer -->
+  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Media viewer" hidden>
+    <button type="button" class="viewer__close" id="viewerClose" aria-label="Close">&times;</button>
+    <button type="button" class="viewer__nav viewer__nav--prev" id="viewerPrev" aria-label="Previous">&larr;</button>
+    <button type="button" class="viewer__nav viewer__nav--next" id="viewerNext" aria-label="Next">&rarr;</button>
+    <div class="viewer__stage">
+      <div class="viewer__media-wrap" id="viewerMediaWrap"></div>
+      <p class="viewer__warning" id="viewerWarning" hidden></p>
+      <div class="viewer__footer">
+        <span class="viewer__caption" id="viewerCaption"></span>
+        <span class="viewer__meta" id="viewerCounter"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/work/media-data.js"></script>
+  <script>
+    /* ═══════════════════════════════════════════════════════════════
+       CONFIGURATION
+
+       HERO IMAGE — set manually, or leave "" to auto-pick the widest
+       landscape photo from your uploaded work.
+
+       MEDIA — loaded from assets/work/media-data.js (auto-updated by update-media.py)
+
+       Photos: assets/work/Photos/<folder>/     → one album per folder
+       Videos: assets/work/Videos/<project>/    → one project album per folder
+               assets/work/Videos/<file>.mp4    → one project per loose file
+               Edit info.json (folder) or <filename>.info.json (loose file) for titles
+       ═══════════════════════════════════════════════════════════════ */
+
+    const HERO_IMAGE = "assets/work/Photos/CasualShots/DSC_1445.jpg";
+
+    const MEDIA = { photos: [], videos: [] };
+
+    const ABOUT = {
+      photo: "assets/about/DSC_0464.jpg",
+      lead: "I'm Siddharth 'Sid' Ajith, a Dubai-based photographer, filmmaker, and creative developer, currently a student at GEMS Founders School, Dubai. As a member of the GFS Media and Communications Team, I contribute to capturing and producing visual content for school events and initiatives, strengthening my experience in photography, filmmaking, and creative storytelling.",
+      body: "My work focuses on telling stories through photography, film, and digital design, combining clean visuals with thoughtful composition and attention to detail. Alongside media, I have a strong interest in technology and web development, exploring how creativity and digital innovation can come together to create meaningful experiences. Every project is an opportunity to learn, refine my craft, and create work that is both purposeful and memorable.",
+      skills: [
+        "Photography", "Filmmaking", "Creative Development", "Web Development",
+        "Digital Design", "Visual Storytelling", "Media Production", "Film Editing"
+      ]
+    };
+
+    const CONTACT = {
+      email: "siddharthajith.photography@gmail.com",
+      social: {
+        instagram: "https://www.instagram.com/siddh4rthaj1th/",
+        linkedin: "https://www.linkedin.com/in/siddharth-ajith/"
+      }
+    };
+
+    /* ═══════════════════════════════════════════════════════════════
+       Application
+       ═══════════════════════════════════════════════════════════════ */
+
+    const $ = (s, c = document) => c.querySelector(s);
+    const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+    const state = {
+      photoAlbumIndex: null,
+      videoAlbumIndex: null,
+      viewer: { open: false, type: null, index: -1, items: [] }
+    };
+
+    function encodeMediaSrc(folder, file) {
+      if (file.startsWith("http://") || file.startsWith("https://")) return file;
+      const base = folder.endsWith("/") ? folder : folder + "/";
+      if (file.startsWith("assets/")) {
+        const slash = file.lastIndexOf("/");
+        return slash >= 0
+          ? file.slice(0, slash + 1) + encodeURIComponent(file.slice(slash + 1))
+          : encodeURIComponent(file);
+      }
+      const encodedFile = file.split("/").map(encodeURIComponent).join("/");
+      return base + encodedFile;
+    }
+
+    function normalizeItem(item, folder) {
+      if (typeof item === "string") {
+        return { src: encodeMediaSrc(folder, item), caption: "" };
+      }
+      const file = item.file || "";
+      const src = file.startsWith("http") || file.startsWith("assets/")
+        ? encodeMediaSrc("", file)
+        : encodeMediaSrc(folder, file);
+      return { src, caption: item.caption || "" };
+    }
+
+    function prepareAlbums(entries) {
+      return (entries || []).map(entry => {
+        const folder = entry.folder || "";
+        const info = entry.info || {};
+        const title = info.title || entry.category || "Untitled";
+        return {
+          title,
+          folder,
+          info: {
+            title,
+            cover: info.cover || "",
+            date: info.date || "",
+            role: info.role || "",
+            description: info.description || ""
+          },
+          items: (entry.items || []).map(item => ({
+            ...normalizeItem(item, folder),
+            category: title
+          }))
+        };
+      });
+    }
+
+    let photoAlbums = [];
+    let videoAlbums = [];
+
+    function getAlbumTitle(album) {
+      return album.info?.title || album.title || "Untitled";
+    }
+
+    function renderAlbumPanel(panel, album, type) {
+      const info = album.info || {};
+      const count = album.items.length;
+      const unit = type === "photo"
+        ? (count === 1 ? "photo" : "photos")
+        : (count === 1 ? "video" : "videos");
+      panel.innerHTML = `
+        <p class="album-panel__label">Folder</p>
+        <h3 class="album-panel__title">${info.title || album.title}</h3>
+        ${info.description ? `<p class="album-panel__text">${info.description}</p>` : `<p class="album-panel__text" style="color:var(--cream-dim);font-style:italic;">Add a description in this folder's info.json</p>`}
+        ${info.role ? `<p class="album-panel__text" style="margin-top:1rem;"><strong style="color:var(--sage);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;">What I did</strong><br>${info.role}</p>` : ""}
+        <p class="album-panel__count">${count} ${unit}</p>
+      `;
+    }
+
+    function getAlbumCoverSrc(album) {
+      const cover = album.info?.cover;
+      if (!cover) return null;
+      if (cover.startsWith("http://") || cover.startsWith("https://") || cover.startsWith("assets/")) {
+        return encodeMediaSrc("", cover);
+      }
+      return encodeMediaSrc(album.folder, cover);
+    }
+
+    function renderAlbumCards(grid, albums, empty, type) {
+      if (!albums.length) {
+        grid.innerHTML = "";
+        empty.hidden = false;
+        return;
+      }
+      empty.hidden = true;
+      grid.innerHTML = "";
+      albums.forEach((album, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "album-card";
+        const title = getAlbumTitle(album);
+        const count = album.items.length;
+        const unit = type === "photo" ? "photos" : "videos";
+        btn.innerHTML = `
+          <div class="album-card__cover"></div>
+          <div class="album-card__body">
+            <h3 class="album-card__title">${title}</h3>
+            <p class="album-card__meta">${count} ${unit}</p>
+          </div>
+        `;
+        const cover = btn.querySelector(".album-card__cover");
+        const coverSrc = getAlbumCoverSrc(album);
+        if (coverSrc) {
+          const img = document.createElement("img");
+          img.src = coverSrc;
+          img.alt = "";
+          img.loading = "lazy";
+          cover.appendChild(img);
+        } else if (album.items[0]) {
+          if (type === "photo") {
+            const img = document.createElement("img");
+            img.src = album.items[0].src;
+            img.alt = "";
+            img.loading = "lazy";
+            cover.appendChild(img);
+          } else {
+            const vid = document.createElement("video");
+            vid.src = album.items[0].src + "#t=0.5";
+            vid.muted = true;
+            vid.playsInline = true;
+            vid.preload = "metadata";
+            cover.appendChild(vid);
+          }
+        }
+        btn.addEventListener("click", () => {
+          if (type === "photo") openPhotoAlbum(i);
+          else openVideoAlbum(i);
+        });
+        grid.appendChild(btn);
+      });
+    }
+
+    /* ─── Photography folders ─────────────────────────────────── */
+    function showPhotoAlbumList() {
+      state.photoAlbumIndex = null;
+      $("#photoAlbumList").hidden = false;
+      $("#photoAlbumView").classList.remove("is-active");
+      $("#photoAlbumView").hidden = true;
+    }
+
+    function openPhotoAlbum(index) {
+      state.photoAlbumIndex = index;
+      const album = photoAlbums[index];
+      $("#photoAlbumList").hidden = true;
+      $("#photoAlbumView").hidden = false;
+      $("#photoAlbumView").classList.add("is-active");
+      renderAlbumPanel($("#photoPanel"), album, "photo");
+
+      const grid = $("#photoAlbumGallery");
+      grid.innerHTML = "";
+      album.items.forEach((item, i) => {
+        const cell = document.createElement("button");
+        cell.type = "button";
+        cell.className = "gallery__item";
+        cell.setAttribute("aria-label", item.caption || `Photo ${i + 1}`);
+        const img = document.createElement("img");
+        img.src = item.src;
+        img.alt = item.caption || "";
+        img.loading = "lazy";
+        cell.appendChild(img);
+        cell.addEventListener("click", () => openViewer("photo", i, album.items));
+        grid.appendChild(cell);
+      });
+    }
+
+    function renderPhotoSection() {
+      renderAlbumCards($("#photoAlbumsGrid"), photoAlbums, $("#photoEmpty"), "photo");
+    }
+
+    $("#photoBack").addEventListener("click", showPhotoAlbumList);
+
+    /* ─── Video folders ───────────────────────────────────────── */
+    function showVideoAlbumList() {
+      state.videoAlbumIndex = null;
+      $("#videoAlbumList").hidden = false;
+      $("#videoAlbumView").classList.remove("is-active");
+      $("#videoAlbumView").hidden = true;
+    }
+
+    function openVideoAlbum(index) {
+      state.videoAlbumIndex = index;
+      const album = videoAlbums[index];
+      $("#videoAlbumList").hidden = true;
+      $("#videoAlbumView").hidden = false;
+      $("#videoAlbumView").classList.add("is-active");
+      renderAlbumPanel($("#videoPanel"), album, "video");
+
+      const grid = $("#videoAlbumGallery");
+      grid.innerHTML = "";
+      album.items.forEach((item, i) => {
+        const cell = document.createElement("button");
+        cell.type = "button";
+        cell.className = "gallery__item gallery__item--video";
+        cell.setAttribute("aria-label", item.caption || `Video ${i + 1}`);
+        const vid = document.createElement("video");
+        vid.src = item.src + "#t=0.5";
+        vid.muted = true;
+        vid.playsInline = true;
+        vid.preload = "metadata";
+        cell.appendChild(vid);
+        cell.addEventListener("click", () => openViewer("video", i, album.items));
+        grid.appendChild(cell);
+      });
+    }
+
+    function renderVideoSection() {
+      renderAlbumCards($("#videoAlbumsGrid"), videoAlbums, $("#videoEmpty"), "video");
+    }
+
+    $("#videoBack").addEventListener("click", showVideoAlbumList);
+
+    /* ─── Hero background ─────────────────────────────────────── */
+    function probeImage(src) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve({ src, width: img.naturalWidth, height: img.naturalHeight, ratio: img.naturalWidth / img.naturalHeight });
+        img.onerror = () => resolve(null);
+        img.src = src;
+      });
+    }
+
+    async function setHeroBackground() {
+      const bg = $("#heroBg");
+      if (HERO_IMAGE) {
+        bg.style.backgroundImage = `url("${HERO_IMAGE}")`;
+        return;
+      }
+      if (!photoAlbums.length) return;
+
+      const candidates = photoAlbums
+        .filter(a => a.items.length)
+        .map(a => a.items[0].src);
+
+      // Show something immediately while picking the best landscape
+      bg.style.backgroundImage = `url("${candidates[0]}")`;
+
+      let best = null;
+      for (const src of candidates) {
+        const meta = await probeImage(src);
+        if (!meta || meta.width <= meta.height) continue;
+        if (!best || meta.ratio > best.ratio) best = meta;
+      }
+
+      if (!best) {
+        for (const src of candidates.slice(0, 3)) {
+          const meta = await probeImage(src);
+          if (meta && (!best || meta.ratio > best.ratio)) best = meta;
+        }
+      }
+
+      const chosen = best || await probeImage(candidates[0]);
+      if (chosen) bg.style.backgroundImage = `url("${chosen.src}")`;
+    }
+
+    /* ─── Unified viewer ──────────────────────────────────────── */
+    function openViewer(type, itemIndex, items) {
+      if (!items || !items[itemIndex]) return;
+      state.viewer = { open: true, type, index: itemIndex, items };
+      const viewer = $("#viewer");
+      viewer.hidden = false;
+      document.body.classList.add("viewer-open");
+      requestAnimationFrame(() => viewer.classList.add("is-open"));
+      renderViewer();
+    }
+
+    function closeViewer() {
+      const wrap = $("#viewerMediaWrap");
+      const vid = wrap.querySelector("video");
+      if (vid) { vid.pause(); vid.removeAttribute("src"); vid.load(); }
+      wrap.innerHTML = "";
+      $("#viewer").classList.remove("is-open");
+      document.body.classList.remove("viewer-open");
+      $("#viewerWarning").hidden = true;
+      setTimeout(() => { $("#viewer").hidden = true; }, 450);
+      state.viewer.open = false;
+    }
+
+    function sizeViewerMedia(el) {
+      const maxW = Math.min(1200, window.innerWidth * 0.96);
+      const maxH = window.innerHeight * 0.78;
+      const natW = el.videoWidth || el.naturalWidth || maxW;
+      const natH = el.videoHeight || el.naturalHeight || maxH;
+      if (!natW || !natH) return;
+      const scale = Math.min(maxW / natW, maxH / natH, 1);
+      el.style.width = Math.round(natW * scale) + "px";
+      el.style.height = Math.round(natH * scale) + "px";
+    }
+
+    function renderViewer() {
+      const { type, index, items } = state.viewer;
+      const item = items[index];
+      if (!item) return;
+
+      const wrap = $("#viewerMediaWrap");
+      wrap.innerHTML = "";
+      $("#viewerWarning").hidden = true;
+
+      if (type === "video") {
+        const vid = document.createElement("video");
+        vid.className = "viewer__media viewer__media--video";
+        vid.src = item.src;
+        vid.controls = true;
+        vid.playsInline = true;
+        vid.autoplay = true;
+        vid.onloadedmetadata = () => {
+          if (vid.videoWidth === 0) {
+            $("#viewerWarning").hidden = false;
+            $("#viewerWarning").textContent =
+              "This video format may not display in your browser. Re-encode as H.264 MP4 using ./convert-for-web.sh";
+          }
+          sizeViewerMedia(vid);
+        };
+        vid.play().catch(() => {});
+        wrap.appendChild(vid);
+      } else {
+        const img = document.createElement("img");
+        img.className = "viewer__media";
+        img.src = item.src;
+        img.alt = item.caption || "";
+        wrap.appendChild(img);
+        img.onload = () => sizeViewerMedia(img);
+        if (img.complete) sizeViewerMedia(img);
+      }
+
+      $("#viewerCaption").textContent = item.caption || item.category || "";
+      $("#viewerCounter").textContent = `${index + 1} / ${items.length}`;
+      $("#viewerPrev").disabled = index === 0;
+      $("#viewerNext").disabled = index === items.length - 1;
+    }
+
+    function viewerStep(dir) {
+      const next = state.viewer.index + dir;
+      if (next < 0 || next >= state.viewer.items.length) return;
+      const wrap = $("#viewerMediaWrap");
+      const vid = wrap.querySelector("video");
+      if (vid) { vid.pause(); vid.removeAttribute("src"); }
+      state.viewer.index = next;
+      renderViewer();
+    }
+
+    $("#viewerClose").addEventListener("click", closeViewer);
+    $("#viewerPrev").addEventListener("click", () => viewerStep(-1));
+    $("#viewerNext").addEventListener("click", () => viewerStep(1));
+    $("#viewer").addEventListener("click", e => {
+      if (e.target === $("#viewer")) closeViewer();
+    });
+
+    document.addEventListener("keydown", e => {
+      if (!state.viewer.open) return;
+      if (e.key === "Escape") closeViewer();
+      if (e.key === "ArrowLeft") viewerStep(-1);
+      if (e.key === "ArrowRight") viewerStep(1);
+    });
+
+    let touchX = 0;
+    $("#viewer").addEventListener("touchstart", e => {
+      touchX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    $("#viewer").addEventListener("touchend", e => {
+      const dx = e.changedTouches[0].screenX - touchX;
+      if (Math.abs(dx) < 50) return;
+      viewerStep(dx < 0 ? 1 : -1);
+    }, { passive: true });
+
+    /* ─── Navigation ──────────────────────────────────────────── */
+    function initNav() {
+      const nav = $("#nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("is-scrolled", window.scrollY > 24);
+      }, { passive: true });
+
+      const toggle = $("#navToggle");
+      const mobile = $("#navMobile");
+
+      toggle.addEventListener("click", () => {
+        const open = toggle.classList.toggle("is-open");
+        mobile.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", open);
+        document.body.style.overflow = open ? "hidden" : "";
+      });
+
+      $$(".nav__mobile a").forEach(link => {
+        link.addEventListener("click", () => {
+          toggle.classList.remove("is-open");
+          mobile.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
+
+      const sections = $$("section[id]");
+      const navLinks = $$(".nav__links a, .nav__mobile a");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+            });
+          }
+        });
+      }, { rootMargin: "-40% 0px -50% 0px", threshold: 0 });
+      sections.forEach(s => observer.observe(s));
+    }
+
+    function initReveal() {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+      $$(".reveal").forEach(el => obs.observe(el));
+    }
+
+    function renderAbout() {
+      $("#aboutLead").textContent = ABOUT.lead;
+      $("#aboutBody").textContent = ABOUT.body;
+      $("#aboutSkills").innerHTML = ABOUT.skills.map(s => `<span class="skill">${s}</span>`).join("");
+      if (ABOUT.photo) $("#aboutPhoto").src = ABOUT.photo;
+    }
+
+    function initFooterReveal() {
+      const footer = $("#contact");
+      if (!footer) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            footer.classList.add("is-visible");
+            obs.unobserve(footer);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+      obs.observe(footer);
+    }
+
+    function renderContact() {
+      $("#contactEmail").href = `mailto:${CONTACT.email}`;
+      $("#contactEmail").textContent = CONTACT.email;
+      const labels = { instagram: "Instagram", linkedin: "LinkedIn" };
+      $("#contactSocials").innerHTML = Object.entries(CONTACT.social)
+        .map(([k, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${labels[k]}</a>`)
+        .join("");
+      $("#footerYear").textContent = new Date().getFullYear();
+    }
+
+    async function init() {
+      initNav();
+      initReveal();
+      initFooterReveal();
+      renderAbout();
+      renderContact();
+
+      const config = window.MEDIA_DATA || { photos: [], videos: [] };
+      photoAlbums = prepareAlbums([...(config.photos || []), ...MEDIA.photos]);
+      videoAlbums = prepareAlbums([...(config.videos || []), ...MEDIA.videos]);
+
+      renderPhotoSection();
+      renderVideoSection();
+      await setHeroBackground();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
