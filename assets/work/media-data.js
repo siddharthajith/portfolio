@@ -649,7 +649,7 @@ window.MEDIA_DATA = {
         "cover": "assets/work/Videos/covers/gfs-alumni-cover.png",
         "date": "",
         "role": "",
-        "description": "",
+        "description": "A collection of conversations with graduating students, capturing their memories, experiences, and reflections as they prepare to begin a new chapter beyond GEMS Founders School.",
         "order": 0
       }
     },
@@ -664,7 +664,7 @@ window.MEDIA_DATA = {
         "cover": "covers/why-we-choose-gfs-cover.png",
         "date": "",
         "role": "",
-        "description": "",
+        "description": "A short film exploring the stories, values, and experiences that make GEMS Founders School more than just a place of learning\u2014it's a community students proudly call home.",
         "order": 0
       }
     },
@@ -679,7 +679,7 @@ window.MEDIA_DATA = {
         "cover": "covers/call-to-earth-cover.png",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "A cinematic awareness film created in collaboration with the GFS Sustainability Council, encouraging viewers to reflect on their role in protecting the environment and inspiring meaningful action."
       }
     },
     {
@@ -693,7 +693,7 @@ window.MEDIA_DATA = {
         "cover": "",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "An event highlight showcasing the activities, initiatives, and community involvement during Earth Day celebrations, promoting sustainability through student-led action."
       }
     },
     {
@@ -707,7 +707,7 @@ window.MEDIA_DATA = {
         "cover": "covers/ihub-interview-cover.png",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "An interview feature documenting the launch of the iHub, highlighting its purpose, vision, and the opportunities it creates for innovation, collaboration, and student creativity."
       }
     },
     {
@@ -721,7 +721,7 @@ window.MEDIA_DATA = {
         "cover": "covers/magrudys-book-fair-cover.png",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "A promotional recap capturing the atmosphere of the Magrudy's Book Fair, celebrating reading, curiosity, and the excitement of discovering new books within the school community."
       }
     }
   ]
