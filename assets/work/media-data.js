@@ -4,7 +4,7 @@
 window.MEDIA_DATA = {
   "photos": [
     {
-      "category": "Graduation Ceremony | Class of 26",
+      "category": "Graduation Ceremony | Class of '26",
       "folder": "assets/work/Photos/GradCeremony26/",
       "items": [
         "non-stage/DSC06682.jpg",
@@ -513,11 +513,11 @@ window.MEDIA_DATA = {
         "non-stage/Untitled Export/IMG_9533.jpg"
       ],
       "info": {
-        "title": "Graduation Ceremony | Class of 26",
+        "title": "Graduation Ceremony | Class of '26",
         "cover": "",
         "date": "",
         "role": "",
-        "description": "",
+        "description": "One of my favourite events to photograph. This gallery captures the excitement, emotions, and unforgettable moments as the Class of 2026 celebrated the end of their school journey.",
         "order": 0
       }
     },
@@ -542,7 +542,7 @@ window.MEDIA_DATA = {
         "cover": "",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "A collection of photographs taken whenever something caught my eye. From architecture to everyday moments, these images reflect how I see the world through my camera."
       }
     },
     {
@@ -572,7 +572,7 @@ window.MEDIA_DATA = {
         "cover": "",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "A gallery documenting students coming together to support environmental action. From hands-on activities to meaningful conversations, these photographs capture a day dedicated to making a difference."
       }
     },
     {
@@ -589,7 +589,7 @@ window.MEDIA_DATA = {
         "cover": "",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "A small collection of portraits focused on genuine expressions and personality. I enjoy creating images that feel natural, relaxed, and true to the people in front of the camera."
       }
     },
     {
@@ -633,7 +633,7 @@ window.MEDIA_DATA = {
         "cover": "IMG_9887.jpg",
         "date": "",
         "role": "",
-        "description": ""
+        "description": "A celebration of students being recognised for their hard work and achievements. These photographs capture proud moments shared between students, teachers, and families throughout the ceremony."
       }
     }
   ],
@@ -649,7 +649,7 @@ window.MEDIA_DATA = {
         "cover": "assets/work/Videos/covers/gfs-alumni-cover.png",
         "date": "",
         "role": "",
-        "description": "A collection of conversations with graduating students, capturing their memories, experiences, and reflections as they prepare to begin a new chapter beyond GEMS Founders School.",
+        "description": "A series of interviews with graduating students, giving them the chance to look back on their time at GFS and share the memories they'll take with them.",
         "order": 0
       }
     },
@@ -664,7 +664,7 @@ window.MEDIA_DATA = {
         "cover": "covers/why-we-choose-gfs-cover.png",
         "date": "",
         "role": "",
-        "description": "A short film exploring the stories, values, and experiences that make GEMS Founders School more than just a place of learning\u2014it's a community students proudly call home.",
+        "description": "A short film exploring what makes GEMS Founders School special, told through the voices and experiences of the people who call it home.",
         "order": 0
       }
     },
@@ -679,7 +679,7 @@ window.MEDIA_DATA = {
         "cover": "covers/call-to-earth-cover.png",
         "date": "",
         "role": "",
-        "description": "A cinematic awareness film created in collaboration with the GFS Sustainability Council, encouraging viewers to reflect on their role in protecting the environment and inspiring meaningful action."
+        "description": "Created alongside the Sustainability Council, this film highlights the importance of protecting our environment and encourages small actions that can make a big impact."
       }
     },
     {
@@ -693,7 +693,7 @@ window.MEDIA_DATA = {
         "cover": "",
         "date": "",
         "role": "",
-        "description": "An event highlight showcasing the activities, initiatives, and community involvement during Earth Day celebrations, promoting sustainability through student-led action."
+        "description": "A recap of Earth Day at GFS, capturing students working together through activities and initiatives that promoted sustainability across the school."
       }
     },
     {
@@ -707,21 +707,21 @@ window.MEDIA_DATA = {
         "cover": "covers/ihub-interview-cover.png",
         "date": "",
         "role": "",
-        "description": "An interview feature documenting the launch of the iHub, highlighting its purpose, vision, and the opportunities it creates for innovation, collaboration, and student creativity."
+        "description": "An interview-style feature introducing the opening of the iHub, showcasing its purpose and the opportunities it creates for innovation and collaboration."
       }
     },
     {
-      "category": "magrudy's Book Fair at GFS",
+      "category": "Magrudy's Book Fair at GFS",
       "folder": "assets/work/Videos/",
       "items": [
         "Thank You for an Amazing Magrudy\u2019s Book Fair Week! \ud83d\udcda A huge thank you to our wonderful students.mp4"
       ],
       "info": {
-        "title": "magrudy's Book Fair at GFS",
+        "title": "Magrudy's Book Fair at GFS",
         "cover": "covers/magrudys-book-fair-cover.png",
         "date": "",
         "role": "",
-        "description": "A promotional recap capturing the atmosphere of the Magrudy's Book Fair, celebrating reading, curiosity, and the excitement of discovering new books within the school community."
+        "description": "A short promotional film capturing the atmosphere of the annual book fair, celebrating reading, curiosity, and the excitement of discovering new stories."
       }
     }
   ]
